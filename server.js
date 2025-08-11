@@ -2,6 +2,7 @@ const express = require ("express");
 const jwt = require ("jsonwebtoken");
 // const { connect } = require("mongoose");
 const authRoutes = require('./Routes/authRoute')
+const menuRoutes = require('./Routes/menuRoute')
 require ('dotenv').config();
 const connectDB = require('./config/db')
 
@@ -18,6 +19,8 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/v1/auth', authRoutes)
+
+app.use('/api/v1/menu', menuRoutes)
 
 // app.get('/token', async (req, res) => {
 //     let data = {
